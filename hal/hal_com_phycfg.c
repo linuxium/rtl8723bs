@@ -2309,7 +2309,7 @@ Hal_ChannelPlanToRegulation(
 
 #ifdef CONFIG_LOAD_PHY_PARA_FROM_FILE
 
-extern char *rtw_phy_file_path_bs;
+extern char *rtw_phy_file_path;
 static char	file_path_bs[PATH_MAX];
 
 #define GetLineFromBuffer(buffer)	 strsep(&buffer, "\n")
@@ -2332,7 +2332,7 @@ phy_ConfigMACWithParaFile(
 
 	if ((pHalData->mac_reg_len == 0) && (pHalData->mac_reg == NULL))
 	{
-		rtw_merge_string(file_path_bs, PATH_MAX, rtw_phy_file_path_bs, pFileName);
+		rtw_merge_string(file_path_bs, PATH_MAX, rtw_phy_file_path, pFileName);
 	
 		if (rtw_is_file_readable(file_path_bs) == true)
 		{
@@ -2431,7 +2431,7 @@ phy_ConfigBBWithParaFile(
 
 	if ((pBufLen != NULL) && (*pBufLen == 0) && (pBuf == NULL))
 	{
-		rtw_merge_string(file_path_bs_bs, PATH_MAX, rtw_phy_file_path_bs_bs, pFileName);
+		rtw_merge_string(file_path_bs, PATH_MAX, rtw_phy_file_path, pFileName);
 	
 		if (rtw_is_file_readable(file_path_bs) == true)
 		{
@@ -2880,7 +2880,7 @@ phy_ConfigBBWithPgParaFile(
 
 	if ((pHalData->bb_phy_reg_pg_len == 0) && (pHalData->bb_phy_reg_pg == NULL))
 	{
-		rtw_merge_string(file_path_bs, PATH_MAX, rtw_phy_file_path_bs, pFileName);
+		rtw_merge_string(file_path_bs, PATH_MAX, rtw_phy_file_path, pFileName);
 	
 		if (rtw_is_file_readable(file_path_bs) == true)
 		{
@@ -2960,7 +2960,7 @@ PHY_ConfigRFWithParaFile(
 
 	if ((pBufLen != NULL) && (*pBufLen == 0) && (pBuf == NULL))
 	{
-		rtw_merge_string(file_path_bs, PATH_MAX, rtw_phy_file_path_bs, pFileName);
+		rtw_merge_string(file_path_bs, PATH_MAX, rtw_phy_file_path, pFileName);
 
 		if (rtw_is_file_readable(file_path_bs) == true)
 		{
@@ -3234,7 +3234,7 @@ PHY_ConfigRFWithTxPwrTrackParaFile(
 
 	if ((pHalData->rf_tx_pwr_track_len == 0) && (pHalData->rf_tx_pwr_track == NULL))
 	{
-		rtw_merge_string(file_path_bs, PATH_MAX, rtw_phy_file_path_bs, pFileName);
+		rtw_merge_string(file_path_bs, PATH_MAX, rtw_phy_file_path, pFileName);
 	
 		if (rtw_is_file_readable(file_path_bs) == true)
 		{
@@ -3583,7 +3583,7 @@ PHY_ConfigRFWithPowerLimitTableParaFile(
 
 	if ((pHalData->rf_tx_pwr_lmt_len == 0) && (pHalData->rf_tx_pwr_lmt == NULL))
 	{
-		rtw_merge_string(file_path_bs, PATH_MAX, rtw_phy_file_path_bs, pFileName);
+		rtw_merge_string(file_path_bs, PATH_MAX, rtw_phy_file_path, pFileName);
 	
 		if (rtw_is_file_readable(file_path_bs) == true)
 		{
